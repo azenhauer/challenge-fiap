@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Let's Sign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="mainForm" action="infodoc.html" method="get" enctype="multipart/form-data">
+        <nav class="nav navbar">
+            <div class="container-fluid">
+                <a class="nav-text navbar-brand bg-body-dark" href="index.html">Let's Sign</a>
+                <div class="d-flex p-12">
+                    <button type="button" class="nav-btn btn-sm btn btn-primary d-none d-md-block" id="triggerFile">Adicione um documento</button>
+                    <input type="file" id="fileInput" name="documento" style="display: none;">
+                    <a class="nav-link" href="#">Conta</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container d-flex flex-wrap justify-content-center mt-xl-5">
+            <div class="d-flex flex-column w-100 justify-content-center align-items-center">
+                <div class="myborder container w-100 h-100 d-flex flex-column justify-content-center align-items-center g-5" id="dragArea">
+                    <img src="/imgs/Upload.png" alt="Upload" class="img-fluid" id="upload">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <p class="upload-text text-center">Arraste e solte o arquivo aqui</p>
+                    </div>
+                </div>
+
+                <div class="row g-4 mt-4 w-100">
+                    <div class="col-md-6">
+                        <h5>Nome do documento*</h5>
+                        <input type="text" name="nomeDocumento" placeholder="O nome do seu documento" class="in-form-text form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h5>Quais grupos terão acesso ao documento?</h5>
+                        <input type="text" name="grupos" placeholder="Quais grupos terão acesso ao documento?" class="in-form-text form-control">
+                    </div>
+
+                    <div class="col-12">
+                        <h5>Quais são as categorias desse documento?</h5>
+                        <input type="text" name="categorias" placeholder="Quais são as categorias desse documento?" class="in-form-text form-control">
+                    </div>
+                </div>
+
+                <div class="d-flex w-100 justify-content-end align-items-end">
+                    <button type="submit" class="custom-save-btn btn mt-5 mr-2">Salvar</button>
+                    <button type="reset" class="custom-cancel-btn btn mt-5">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </form>
+
+        
+   
+</html>

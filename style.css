@@ -1,0 +1,212 @@
+
+:root{
+    --primary-color: #4B0A5C;
+    --secondary-color: #1A244C;
+    --background: #D9DEF2;
+}
+html,
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background-color: var(--background);
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.nav-text{
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-btn{
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 5px;
+    background-color:var(--primary-color);
+}
+.nav{
+    border-bottom: 1px solid #B3BDE5;
+}
+.upload-text{
+    color: #525A7A;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 43px;
+}
+label{
+    color: var(--secondary-color);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+.in-form-text{
+    color: #525A7A;
+    background-color: var(--background);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    border: none;
+    border-bottom: 1px solid #4059BF;
+}
+.myborder{
+    cursor: pointer;
+    border: 1px dashed var(--primary-color);
+    min-width: 290px;
+    min-height:260px;
+    width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+    padding-inline: 4rem;
+}
+.myborder:hover{
+    background-color: #ccd4ef;
+}
+.change-border{
+    border: 1px dashed #0A5C4B;
+}
+.custom-save-btn{
+    background-color: #0A5C4B;
+    color: #fff;
+}
+.custom-cancel-btn{
+    border: 1px dashed;
+    color: #000000;
+    background-color: var(--background);
+}
+.custom-cancel-btn:hover{
+    border: 1px dashed;
+    color: #170101;
+    background-color: #ffc4c6;
+}
+.custom-save-btn:hover{
+    background-color: #148b73;
+    color: #fff;
+}
+
+
+.stepper-header {
+    list-style: none;
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.stepper-header::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 30px;
+    right: 30px;
+    height: 2px;
+    background-color: #B3BDE5;
+    z-index: 0;
+}
+
+.stepper-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.stepper-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--background);
+    border: 2px solid #B3BDE5;
+    color: #525A7A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.stepper-item.active .stepper-circle {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.stepper-item.completed .stepper-circle {
+    background-color: #0A5C4B;
+    border-color: #0A5C4B;
+    color: white;
+}
+
+.stepper-label {
+    color: #525A7A;
+    font-weight: 500;
+}
+
+.stepper-item.active .stepper-label {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.step-content {
+    padding: 20px;
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.file-preview {
+   
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-overflow: clip;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    font-size: 0.9em;
+}
+table caption{
+    text-align:center;
+    font-size: 1.3em;
+
+}
+.thead-adjusted{
+    color:#fff;
+    width: 100%;
+    background-color: #4059BF;
+    font-weight: bold;
+
+    background-color: #4059BF;
+    font-weight: bold;
+    
+}
+table tbody td{
+    color: #525A7A;
+    background-color: #B3BDE5;
+    font-weight: bold;
+   
+}
+#reviewCard{
+    background-color: var(--secondary-color);
+    color: white;
+   
+}
+.signer-item{
+    background-color: #B3BDE5;
+    color: #525A7A;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+}

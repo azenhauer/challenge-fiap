@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Let's Sign - Detalhes do Documento</title>
+</head>
+<body>
+    <nav class="nav navbar">
+        <div class="container-fluid">
+            <a class="nav-text navbar-brand bg-body-dark" href="index.html">Let's Sign</a>
+            <div class="d-flex p-12">
+                <button type="button" class="nav-btn btn-sm btn btn-primary d-none d-md-block" id="triggerFile">Adicione um documento</button>
+                <input type="file" id="fileInput" style="display: none;">
+                <a class="nav-link" href="#">Conta</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Stepper Header -->
+        <div class="row">
+            <div class="col-12">
+                <ul class="stepper-header d-flex justify-content-between p-0">
+                    <li class="stepper-item active">
+                        <div class="stepper-circle">1</div>
+                        <div class="stepper-label">Informações Básicas</div>
+                    </li>
+                    <li class="stepper-item">
+                        <div class="stepper-circle">2</div>
+                        <div class="stepper-label">Assinaturas</div>
+                    </li>
+                    <li class="stepper-item">
+                        <div class="stepper-circle">3</div>
+                        <div class="stepper-label">Revisão</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- File Preview Section -->
+        <div class="row mt-2">
+            <div class="col-md-2">
+                <div class="file-preview p-3 border rounded">
+                    <h5>Arquivo do Documento</h5>
+                    <div id="filePreview" class="text-center p-5w bg-light w-100 ">
+                        <p>Nenhum arquivo visualizado</p>
+                    </div>
+                    <p id="fileName" class="mt-2 text-center d-inline-block ">documento.pdf</p>
+                </div>
+            </div>
+             
+            <div class=" w-100">
+                
+                <div id="step1" class="step-content active">
+                    <h3>Informações do Documento</h3>
+                    <form id="docInfoForm">
+                        <div class="form-group">
+                            <label for="docName">Nome do documento*</label>
+                            <input type="text" id="docName" class="in-form-text form-control" placeholder="O nome do seu documento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="docGroups">Quais grupos terão acesso ao documento?</label>
+                            <input type="text" id="docGroups" class="in-form-text form-control" placeholder="Quais grupos terão acesso ao documento?">
+                        </div>
+                        <div class="form-group">
+                            <label for="docCategories">Quais são as categorias desse documento?</label>
+                            <input type="text" id="docCategories" class="in-form-text form-control" placeholder="Quais são as categorias desse documento?">
+                        </div>
+                        <div class="d-flex justify-content-end mt-4">
+                            <button type="button" class="btn custom-save-btn" id="nextToSignatures">Próximo</button>
+                        </div>
+                    </form>
+                </div>
+                
+                
+                <div id="step2" class="step-content d-none w-100">
+                    <h3>Assinaturas</h3>
+                    
+                    <div class="row w-100">
+                        <!-- Left column (3 fields) -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="signerName">Nome completo do signatario</label>
+                                <input type="text" id="signerName" class="in-form-text form-control" placeholder="Informe o nome do signatario">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="signerEmail">E-mail do signatario</label>
+                                <input type="text" id="signerEmail" class="in-form-text form-control" placeholder="Digite o e-mail do signatario">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="docDelivery">Enviar link de assinatura por</label>
+                                <select id="docDelivery" class="in-form-text form-control">
+                                    <option value="email">E-mail</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Right column (3 fields) -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="signAs">Assinar como:</label>
+                                <select id="signAs" class="in-form-text form-control">
+                                    <option value="Aluno">Aluno</option>
+                                    <option value="Professor">Professor</option>
+                                </select>
+                            </div>
+                            
+                            
+                            <!-- CPF and DOB on the same line -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="signerCPF">CPF do signatario</label>
+                                        <input type="text" id="signerCPF" class="in-form-text form-control " placeholder="Digite o CPF do signatario">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="dob">Data de nascimento</label>
+                                        <input type="text" id="dob" class="in-form-text form-control" placeholder="DD/MM/AAAA" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="signMethod">Método de assinatura:</label>
+                                <select id="signMethod" class="in-form-text form-control">
+                                    <option value="magic-link">Magic-link(e-mail)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Horizontal separator -->
+                    <hr class="my-4">
+                    
+                    <!-- Add signers section -->
+                    <div class="mt-3 ">
+                        
+                        <div class="">
+                            <div class="input-group-append flex justify-content-end">
+                                <button class="btn custom-save-btn" type="button" id="addSigner">Adicionar signatario</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="signers-list mt-3 flex justify-content-center">
+                       
+                        
+                        <table class="table table-striped" id="signersTable">
+                            <caption>Signatarios adicionados</caption>
+                           
+                            <thead class ="thead-adjusted ">
+                                <tr class="p-4">
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Assinar como</th>
+                                    <th scope="col">CPF</th>
+                                    <th scope="col">Data de nascimento</th>
+                                    <th scope="col"></th>
+                                    
+                                </tr>
+
+                            </thead>
+                            <tbody id="signersList">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="button" class="btn custom-cancel-btn" id="backToInfo">Voltar</button>
+                        <button type="button" class="btn custom-save-btn" id="nextToReview">Próximo</button>
+                    </div>
+                </div>
+                
+                <div id="step3" class="step-content d-none">
+                    <h3>Revisão final</h3>
+                    <div class="card" id="reviewCard">
+                        <div class="card-body d-flex flex-column">
+                            <div class=" col-md-6">
+                                <h5 class="card-title">Resumo do documento</h5>
+                            <p><strong>Nome:</strong> <span id="reviewDocName"></span></p>
+                            <p><strong>Grupos:</strong> <span id="reviewDocGroups"></span></p>
+                            <p><strong>Categorias:</strong> <span id="reviewDocCategories"></span></p>
+                            
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-center flex-column">
+                                <p><strong>Assinantes:</strong></p>
+                                <ul id="reviewSignersList">
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="button" class="btn custom-cancel-btn" id="backToSignatures">Voltar</button>
+                        <button type="button" class="btn custom-save-btn" id="finishProcess">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="infodoc.js" defer></script>
+</body>
+</html>
